@@ -1,0 +1,160 @@
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+using namespace std;
+void b_sort(int tab[], unsigned int n)
+{
+	for (int i = 0; i < n; i++)
+		for (int j = 1; j < n - i; j++) //pętla wewnętrzna
+			if (tab[j - 1] > tab[j])
+			{
+				int temp = tab[j];  
+				tab[j - 1] = tab[j];  //zamiana miejscami
+				tab[j] = temp;
+			}
+}
+void wypelnianie_tablicy_rand_z_zakresu_od_p_do_k(int tab[], unsigned int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		//tab[i] = p + rand() % (k - p + 1);
+	}
+}
+void ile_elementow_w_tablicy(int tab[], int n)
+{
+	int ile_elementow = 0;
+	ile_elementow = (sizeof(tab) / sizeof(int));
+	cout << ile_elementow;
+}
+void czy_wartosc_tablicy_parzysta(int tab[], int n)
+{
+	for (int i = 0; i < n; i++)
+		if (tab[i] % 2 == 0)
+			cout << tab[i] << " ";
+}
+void czy_wartosc_tablicy_jest_nieparzysta(int tab[], int n)
+{
+	for (int i = 0; i < n; i++)
+		if (tab[i] % 2)
+			cout << tab[i] << " ";
+}
+void swap(int&a, int&b)
+{
+	int temp;
+	temp = b;
+	b = a;		//zamiana miejscami
+    a = temp;   
+}
+bool czy_liczba_jest_pierwsza(int n)
+{
+	if (n < 2)
+		return false; 
+
+	for (int i = 2; i * i <= n; i++)
+		if (n % i == 0)
+			return false; //gdy znajdziemy dzielnik, to dana liczba nie jest pierwsza
+	return true;
+}
+void wyswietlanie_tablicy(int tab[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cout << tab[i] << " ";
+	}
+}
+void suma_tablicy(int tab[], int n)
+{
+	int wynik = 0;
+	for (int i = 0; i < n; i++)
+	{
+		wynik += tab[i];
+	}
+	cout << wynik;
+}
+void srednia_tablicy(int tab[], int n)
+{
+	int wynik=0;
+	for (int i = 0; i < n; i++)
+	{
+		wynik =wynik+ tab[i];
+	}
+	wynik /= n;
+	cout << wynik;
+}
+void wczytanie_tablicy(int tab[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		cin >> tab[i];
+	}
+}
+void min_element_w_tablicy(int tab[], int n)
+{
+	int minimalny_elemnt = tab[0];
+		for (int i = 1; i < n; i++)
+		{
+			if (minimalny_elemnt > tab[i])
+			{
+				minimalny_elemnt = tab[i];
+			}
+		}
+}
+void max_element_w_tablicy(int tab[], int n)
+{
+	int max_elemnt = tab[0];
+	for (int i = 1; i < n; i++)
+	{
+		if (max_elemnt < tab[i])
+		{
+			max_elemnt = tab[i];
+		}
+	}
+}
+void czy_duza_litera(char znak)
+{
+	if ((znak > 64) && (znak < 91));
+}
+void czy_mala_litera(char znak)
+{
+	if ((znak > 96) && (znak < 123));
+}
+void czy_cyfra(char znak)
+{
+	if ((znak > 47) && (znak < 58));
+}
+void konwersja_mala_na_duza(char& znak)
+{
+	znak=znak - 32;
+}
+void konwersja_duza_na_mala(char& znak)
+{
+	znak = znak + 32;
+
+}
+int char_to_int(char znak)
+{
+	return (int)znak;
+}
+char int_to_char(int liczba)
+{
+	return (char)liczba;
+}
+void dec_to_bin(int liczba)
+{
+	int i = 0;
+	char tab[31];
+
+	while (liczba) //dopóki liczba będzie różna od zera
+	{
+		tab[i++] = liczba % 2;
+		liczba /= 2;
+	}
+
+	for (int j = i - 1; j >= 0; j--)
+		cout << (int)tab[j];
+}
+int main()
+{
+
+	return 0;
+}
